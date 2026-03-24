@@ -45,10 +45,10 @@ const HeroSection = () => {
             </Button>
           </div>
 
-          <div className="flex flex-col sm:flex-row gap-6">
+          <div className="flex flex-col sm:flex-row gap-4 sm:gap-8">
             {benefits.map(({ icon: Icon, text }) => (
-              <div key={text} className="flex items-center gap-3">
-                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center">
+              <div key={text} className="flex items-center gap-3 whitespace-nowrap">
+                <div className="w-10 h-10 rounded-lg bg-primary/20 flex items-center justify-center shrink-0">
                   <Icon className="w-5 h-5 text-primary" />
                 </div>
                 <span className="text-sm font-medium text-primary-foreground/90">{text}</span>
