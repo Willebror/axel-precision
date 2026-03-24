@@ -1,3 +1,5 @@
+import { Link } from "react-router-dom";
+
 const SiteFooter = () => {
   const year = new Date().getFullYear();
 
@@ -7,7 +9,13 @@ const SiteFooter = () => {
         <p className="font-heading font-semibold text-accent-foreground">
           JH'S <span className="text-primary">Axelteknik</span>
         </p>
-        <p>© {year} JH'S Mobila Axelteknik AB. Alla rättigheter förbehållna.</p>
+        <div className="flex items-center gap-4">
+          <Link to="/integritetspolicy" className="hover:text-primary transition-colors">
+            Integritetspolicy
+          </Link>
+          <span>·</span>
+          <p>© {year} JH'S Mobila Axelteknik AB</p>
+        </div>
       </div>
     </footer>
   );
