@@ -32,7 +32,7 @@ const HeroSection = () => {
           </p>
 
           <div className="flex flex-col sm:flex-row gap-4 mb-12">
-            <Button asChild size="lg" className="gradient-cta shadow-cta border-0 text-primary-foreground font-semibold text-base px-8 h-14 transition-all duration-300 hover:scale-105 hover:shadow-lg">
+            <Button asChild size="lg" className="gradient-cta shadow-cta border-0 text-primary-foreground font-semibold text-base px-8 h-14">
               <a href="#kontakt">Boka tid</a>
             </Button>
             <Button
