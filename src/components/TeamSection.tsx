@@ -63,6 +63,13 @@ const TeamSection = () => {
                   <Phone className="w-4 h-4" />
                   {member.phone}
                 </a>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mt-1"
+                >
+                  <Mail className="w-4 h-4" />
+                  {member.email}
+                </a>
               </div>
             </div>
           ))}
