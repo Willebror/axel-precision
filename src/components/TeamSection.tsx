@@ -12,7 +12,7 @@ const team = [
   {
     name: "William Wong",
     title: "Axeltekniker",
-    phone: "070-765 43 21",
+    phone: "070-842 61 75",
     image: williamImg,
   },
 ];
