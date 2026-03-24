@@ -17,7 +17,7 @@ const SiteHeader = () => {
     <header className="fixed top-0 left-0 right-0 z-50 bg-accent/95 backdrop-blur-md border-b border-border/10">
       <div className="container flex items-center justify-between h-16 md:h-20">
         <a href="#start" className="flex items-center">
-          <img src={logo} alt="JH'S Axelteknik" className="h-10 md:h-14 w-auto" />
+          <img src={logo} alt="JH'S Axelteknik" className="h-12 md:h-16 w-auto" />
         </a>
 
         {/* Desktop nav */}
