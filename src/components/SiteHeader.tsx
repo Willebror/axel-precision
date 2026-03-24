@@ -21,7 +21,7 @@ const SiteHeader = () => {
         </a>
 
         {/* Desktop nav */}
-        <nav className="hidden md:flex items-center gap-8">
+        <nav className="hidden lg:flex items-center gap-8">
           {navLinks.map((link) => (
             <a
               key={link.href}
@@ -42,7 +42,7 @@ const SiteHeader = () => {
         {/* Mobile toggle */}
         <button
           onClick={() => setOpen(!open)}
-          className="md:hidden text-accent-foreground p-2"
+          className="lg:hidden text-accent-foreground p-2"
           aria-label="Toggle menu"
         >
           {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
@@ -51,7 +51,7 @@ const SiteHeader = () => {
 
       {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden bg-accent border-t border-border/10 pb-6">
+        <nav className="lg:hidden bg-accent border-t border-border/10 pb-6">
           <div className="container flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <a
