@@ -1,4 +1,4 @@
-import { Phone } from "lucide-react";
+import { Phone, Mail } from "lucide-react";
 import joakimImg from "@/assets/team-joakim.jpg";
 import williamImg from "@/assets/team-william.jpg";
 
@@ -7,12 +7,14 @@ const team = [
     name: "Joakim B Hammarstedt",
     title: "Axeltekniker",
     phone: "073-631 46 87",
+    email: "Joakim@jhsaxelteknik.se",
     image: joakimImg,
   },
   {
     name: "William Wong",
     title: "Axeltekniker",
     phone: "070-842 61 75",
+    email: "William@jhsaxelteknik.se",
     image: williamImg,
   },
 ];
@@ -60,6 +62,13 @@ const TeamSection = () => {
                 >
                   <Phone className="w-4 h-4" />
                   {member.phone}
+                </a>
+                <a
+                  href={`mailto:${member.email}`}
+                  className="inline-flex items-center gap-2 text-sm text-muted-foreground hover:text-primary transition-colors mt-1"
+                >
+                  <Mail className="w-4 h-4" />
+                  {member.email}
                 </a>
               </div>
             </div>
