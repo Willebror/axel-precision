@@ -19,7 +19,7 @@ const Integritetspolicy = () => {
 
         <div className="prose prose-invert prose-orange max-w-none space-y-8 text-muted-foreground">
           <p className="text-lg">
-            JH'S Mobila Axelteknik AB (org.nr ska anges här) värnar om din personliga integritet. 
+            JH'S Mobila Axelteknik AB (org.nr 559523–6935) värnar om din personliga integritet. 
             Denna integritetspolicy beskriver hur vi samlar in, använder och skyddar dina personuppgifter 
             i enlighet med EU:s dataskyddsförordning (GDPR) och svensk lagstiftning.
           </p>
