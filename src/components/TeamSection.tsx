@@ -6,13 +6,13 @@ const team = [
   {
     name: "Joakim B Hammarstedt",
     title: "Axeltekniker",
-    phone: "070-123 45 67",
+    phone: "073-631 46 87",
     image: joakimImg,
   },
   {
     name: "William Wong",
     title: "Axeltekniker",
-    phone: "070-765 43 21",
+    phone: "070-842 61 75",
     image: williamImg,
   },
 ];
