@@ -39,7 +39,7 @@ const HeroSection = () => {
               asChild
               size="lg"
               variant="outline"
-              className="border-primary-foreground/30 text-primary-foreground hover:bg-primary-foreground/10 font-semibold text-base px-8 h-14"
+              className="bg-transparent border-2 border-primary-foreground/40 text-primary-foreground hover:border-primary hover:text-primary hover:bg-primary/10 transition-all duration-300 font-semibold text-base px-8 h-14"
             >
               <a href="#om-oss">Om oss</a>
             </Button>
