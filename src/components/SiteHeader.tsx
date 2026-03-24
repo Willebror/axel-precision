@@ -51,7 +51,7 @@ const SiteHeader = () => {
 
       {/* Mobile nav */}
       {open && (
-        <nav className="md:hidden bg-accent border-t border-border/10 pb-6">
+        <nav className="lg:hidden bg-accent border-t border-border/10 pb-6">
           <div className="container flex flex-col gap-4 pt-4">
             {navLinks.map((link) => (
               <a
