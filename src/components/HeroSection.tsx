@@ -4,7 +4,7 @@ import heroImage from "@/assets/hero-truck.jpg";
 
 const benefits = [
   { icon: MapPin, text: "På plats hos kund" },
-  { icon: TrendingDown, text: "Minskade däckkostnader" },
+  { icon: TrendingDown, text: "Minskade däck & bränslekostnader" },
   { icon: ShieldCheck, text: "Ökad trafiksäkerhet" },
 ];
 
