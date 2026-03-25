@@ -1,27 +1,42 @@
+import { Globe, Check } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 import { languages } from "@/i18n/translations";
+import {
+  DropdownMenu,
+  DropdownMenuTrigger,
+  DropdownMenuContent,
+  DropdownMenuItem,
+} from "@/components/ui/dropdown-menu";
 
 const LanguageSwitcher = () => {
   const { language, setLanguage } = useLanguage();
 
   return (
-    <div className="flex items-center gap-1">
-      {languages.map((lang) => (
+    <DropdownMenu>
+      <DropdownMenuTrigger asChild>
         <button
-          key={lang.code}
-          onClick={() => setLanguage(lang.code)}
-          aria-label={lang.label}
-          title={lang.label}
-          className={`text-lg leading-none p-1 rounded transition-all ${
-            language === lang.code
-              ? "opacity-100 ring-1 ring-primary/50 bg-primary/10"
-              : "opacity-50 hover:opacity-80"
-          }`}
+          aria-label="Välj språk"
+          className="p-2 rounded-md text-accent-foreground/70 hover:text-primary hover:bg-primary/10 transition-colors"
         >
-          {lang.flag}
+          <Globe className="w-5 h-5" />
         </button>
-      ))}
-    </div>
+      </DropdownMenuTrigger>
+      <DropdownMenuContent align="end" className="min-w-[160px]">
+        {languages.map((lang) => (
+          <DropdownMenuItem
+            key={lang.code}
+            onClick={() => setLanguage(lang.code)}
+            className="flex items-center justify-between cursor-pointer"
+          >
+            <span className="flex items-center gap-2">
+              <span className="text-base">{lang.flag}</span>
+              <span>{lang.label}</span>
+            </span>
+            {language === lang.code && <Check className="w-4 h-4 text-primary" />}
+          </DropdownMenuItem>
+        ))}
+      </DropdownMenuContent>
+    </DropdownMenu>
   );
 };
 
