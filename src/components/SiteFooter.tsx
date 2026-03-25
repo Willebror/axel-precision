@@ -21,7 +21,7 @@ const SiteFooter = () => {
         </div>
         <div className="flex items-center gap-3">
           <a
-            href="https://instagram.com/jhs_mobila_axelteknik"
+            href="https://www.instagram.com/jh.s_mobilaaxelteknik/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
@@ -30,7 +30,7 @@ const SiteFooter = () => {
             <Instagram className="w-5 h-5" />
           </a>
           <a
-            href="https://facebook.com/jhsmobilaaxelteknik"
+            href="https://www.facebook.com/jh.s.mobila.axelteknik.ab"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Facebook"
