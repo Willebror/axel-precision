@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { Instagram, Facebook } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
 const SiteFooter = () => {
@@ -17,6 +18,26 @@ const SiteFooter = () => {
           </Link>
           <span>·</span>
           <p>© {year} JH'S Mobila Axelteknik AB</p>
+        </div>
+        <div className="flex items-center gap-3">
+          <a
+            href="https://instagram.com/jhs_mobila_axelteknik"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Instagram"
+            className="text-accent-foreground/50 hover:text-primary transition-colors"
+          >
+            <Instagram className="w-5 h-5" />
+          </a>
+          <a
+            href="https://facebook.com/jhsmobilaaxelteknik"
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-label="Facebook"
+            className="text-accent-foreground/50 hover:text-primary transition-colors"
+          >
+            <Facebook className="w-5 h-5" />
+          </a>
         </div>
       </div>
     </footer>
