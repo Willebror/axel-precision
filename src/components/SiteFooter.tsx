@@ -21,7 +21,7 @@ const SiteFooter = () => {
         </div>
         <div className="flex items-center gap-3">
           <a
-            href="https://www.instagram.com/jh.s_mobilaaxelteknik?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw=="
+            href="https://www.instagram.com/jh.s_mobilaaxelteknik/"
             target="_blank"
             rel="noopener noreferrer"
             aria-label="Instagram"
