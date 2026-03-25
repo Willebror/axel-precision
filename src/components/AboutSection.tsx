@@ -16,9 +16,17 @@ const AboutSection = () => {
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8">
             Om JH'S Axelteknik
           </h2>
-          <p className="text-muted-foreground text-lg leading-relaxed mb-10">
-            JH'S Mobila Axelteknik AB är specialiserade på hjulinställning av tunga fordon ute på fält. Vi hjälper åkerier och transportföretag att minska kostnader och öka säkerheten – utan att fordonen behöver tas ur drift längre än nödvändigt. Med fokus på <span className="text-foreground font-medium">precision i varje moment</span> levererar vi pålitliga resultat där det behövs som mest.
-          </p>
+          <div className="text-muted-foreground text-lg leading-relaxed mb-10 space-y-4">
+            <p>
+              JH'S Mobila Axelteknik AB är specialiserade på hjulinställning av tunga fordon ute på fält. Vi arbetar med åkerier, bussbolag, transportföretag och verkstäder för att säkerställa optimal prestanda och säkerhet.
+            </p>
+            <p>
+              Genom vår mobila service minimerar vi stillestånd och hjälper våra kunder att minska däckslitage, sänka bränslekostnader och öka driftsäkerheten.
+            </p>
+            <p>
+              Med fokus på precision och kvalitet levererar vi pålitliga resultat – där det behövs som mest.
+            </p>
+          </div>
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">
             {highlights.map((item) => (
