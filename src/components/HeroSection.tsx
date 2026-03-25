@@ -17,7 +17,7 @@ const HeroSection = () => {
       <img
         src={heroImage}
         alt="Lastbil på svensk väg i solnedgång"
-        className="absolute inset-0 w-full h-full object-cover"
+        className="absolute inset-0 w-full h-full object-cover object-left md:object-center"
         loading="eager"
       />
       <div className="absolute inset-0 gradient-hero" />
