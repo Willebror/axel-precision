@@ -1,18 +1,17 @@
 import { Phone, Mail } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import joakimImg from "@/assets/team-joakim.jpg";
 import williamImg from "@/assets/team-william.jpg";
 
 const team = [
   {
     name: "Joakim B Hammarstedt",
-    title: "Axeltekniker",
     phone: "073-631 46 87",
     email: "Joakim@jhsaxelteknik.se",
     image: joakimImg,
   },
   {
     name: "William Wong",
-    title: "Axeltekniker",
     phone: "070-842 61 75",
     email: "William@jhsaxelteknik.se",
     image: williamImg,
@@ -20,18 +19,20 @@ const team = [
 ];
 
 const TeamSection = () => {
+  const { t } = useLanguage();
+
   return (
     <section className="py-20 md:py-32 bg-background">
       <div className="container">
         <div className="text-center mb-16">
           <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">
-            Vårt team
+            {t("team.label")}
           </p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-4">
-            Möt våra tekniker
+            {t("team.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-xl mx-auto">
-            Erfarna specialister med passion för precision och kvalitet.
+            {t("team.desc")}
           </p>
         </div>
 
@@ -54,7 +55,7 @@ const TeamSection = () => {
                   {member.name}
                 </h3>
                 <p className="text-primary font-medium text-sm mb-3">
-                  {member.title}
+                  {t("team.role")}
                 </p>
                 <a
                   href={`tel:${member.phone.replace(/[^+\d]/g, "")}`}

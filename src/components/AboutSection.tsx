@@ -1,31 +1,28 @@
 import { CheckCircle } from "lucide-react";
-
-const highlights = [
-  "Specialiserade på tunga fordon",
-  "Mobil service – vi kommer till er",
-  "Fokus på precision och kvalitet",
-  "Minimalt stillestånd för ert företag",
-];
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const AboutSection = () => {
+  const { t } = useLanguage();
+
+  const highlights = [
+    t("about.h1"),
+    t("about.h2"),
+    t("about.h3"),
+    t("about.h4"),
+  ];
+
   return (
     <section id="om-oss" className="py-20 md:py-32 bg-secondary">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center">
-          <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">Om oss</p>
+          <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">{t("about.label")}</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-8">
-            Om JH'S Axelteknik
+            {t("about.title")}
           </h2>
           <div className="text-muted-foreground text-lg leading-relaxed mb-10 space-y-4">
-            <p>
-              JH'S Mobila Axelteknik AB är specialiserade på hjulinställning av tunga fordon ute på fält. Vi arbetar med åkerier, bussbolag, transportföretag och verkstäder för att säkerställa optimal prestanda och säkerhet.
-            </p>
-            <p>
-              Genom vår mobila service minimerar vi stillestånd och hjälper våra kunder att minska däckslitage, sänka bränslekostnader och öka driftsäkerheten.
-            </p>
-            <p>
-              Med fokus på precision och kvalitet levererar vi pålitliga resultat – där det behövs som mest.
-            </p>
+            <p>{t("about.p1")}</p>
+            <p>{t("about.p2")}</p>
+            <p>{t("about.p3")}</p>
           </div>
 
           <div className="grid sm:grid-cols-2 gap-4 max-w-lg mx-auto">

@@ -1,6 +1,8 @@
 import { Link } from "react-router-dom";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const SiteFooter = () => {
+  const { t } = useLanguage();
   const year = new Date().getFullYear();
 
   return (
@@ -11,7 +13,7 @@ const SiteFooter = () => {
         </p>
         <div className="flex items-center gap-4">
           <Link to="/integritetspolicy" className="hover:text-primary transition-colors">
-            Integritetspolicy
+            {t("footer.privacy")}
           </Link>
           <span>·</span>
           <p>© {year} JH'S Mobila Axelteknik AB</p>

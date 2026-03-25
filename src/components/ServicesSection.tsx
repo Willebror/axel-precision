@@ -1,24 +1,27 @@
 import { Gauge, Fuel, Shield, Clock } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 import serviceImage from "@/assets/service-alignment.jpg";
 
-const features = [
-  { icon: Gauge, title: "Minskat däckslitage", desc: "Korrekt inställning förlänger livslängden på däcken avsevärt." },
-  { icon: Fuel, title: "Lägre bränsleförbrukning", desc: "Rätt vinklar minskar rullmotståndet och sparar bränsle." },
-  { icon: Shield, title: "Bättre stabilitet & säkerhet", desc: "Förbättrad körstabilitet och minskad risk på vägen." },
-  { icon: Clock, title: "Minimalt stillestånd", desc: "Mobil service – vi kommer till er och jobbet görs på plats." },
-];
-
 const ServicesSection = () => {
+  const { t } = useLanguage();
+
+  const features = [
+    { icon: Gauge, title: t("services.f1.title"), desc: t("services.f1.desc") },
+    { icon: Fuel, title: t("services.f2.title"), desc: t("services.f2.desc") },
+    { icon: Shield, title: t("services.f3.title"), desc: t("services.f3.desc") },
+    { icon: Clock, title: t("services.f4.title"), desc: t("services.f4.desc") },
+  ];
+
   return (
     <section id="tjanster" className="py-20 md:py-32 bg-background">
       <div className="container">
         <div className="text-center mb-16">
-          <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">Våra tjänster</p>
+          <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">{t("services.label")}</p>
           <h2 className="font-heading text-3xl md:text-4xl font-bold text-foreground mb-6">
-            Hjulinställning för tunga fordon
+            {t("services.title")}
           </h2>
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
-            Felaktig hjulinställning på lastbilar och tunga fordon kan leda till onödigt slitage, högre bränslekostnader och försämrad säkerhet. Med vår mobila tjänst utför vi hjulinställning direkt på plats hos er – snabbt, effektivt och med hög precision.
+            {t("services.desc")}
           </p>
         </div>
 

@@ -2,11 +2,13 @@ import { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "@/components/ui/button";
 import { Cookie } from "lucide-react";
+import { useLanguage } from "@/i18n/LanguageContext";
 
 const CONSENT_KEY = "jhs-cookie-consent";
 
 const CookieConsent = () => {
   const [visible, setVisible] = useState(false);
+  const { t } = useLanguage();
 
   useEffect(() => {
     const consent = localStorage.getItem(CONSENT_KEY);
@@ -29,16 +31,16 @@ const CookieConsent = () => {
         <div className="bg-card border border-border rounded-xl p-5 md:p-6 shadow-lg flex flex-col sm:flex-row items-start sm:items-center gap-4">
           <Cookie className="w-6 h-6 text-primary shrink-0 mt-0.5 sm:mt-0" />
           <div className="flex-1 text-sm text-muted-foreground">
-            Vi använder endast nödvändiga cookies för att webbplatsen ska fungera. Läs mer i vår{" "}
+            {t("cookie.text")}{" "}
             <Link to="/integritetspolicy" className="text-primary hover:underline font-medium">
-              integritetspolicy
+              {t("cookie.policy")}
             </Link>.
           </div>
           <Button
             onClick={accept}
             className="gradient-cta shadow-cta border-0 text-primary-foreground font-semibold shrink-0"
           >
-            Jag förstår
+            {t("cookie.accept")}
           </Button>
         </div>
       </div>
