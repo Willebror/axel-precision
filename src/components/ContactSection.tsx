@@ -26,7 +26,7 @@ const ContactSection = () => {
               <Phone className="w-6 h-6 text-primary" />
             </div>
             <p className="font-heading font-semibold text-foreground mb-1">Joakim B Hammarstedt</p>
-            <p className="text-primary font-medium text-lg">073-631 46 87</p>
+            <p className="text-primary font-medium text-lg">+46 (0) 73-631 46 87</p>
           </a>
 
           <a
@@ -37,7 +37,7 @@ const ContactSection = () => {
               <Phone className="w-6 h-6 text-primary" />
             </div>
             <p className="font-heading font-semibold text-foreground mb-1">William Wong</p>
-            <p className="text-primary font-medium text-lg">070-842 61 75</p>
+            <p className="text-primary font-medium text-lg">+46 (0) 70-842 61 75</p>
           </a>
 
           <a

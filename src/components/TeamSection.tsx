@@ -6,13 +6,13 @@ import williamImg from "@/assets/team-william.jpg";
 const team = [
   {
     name: "Joakim B Hammarstedt",
-    phone: "073-631 46 87",
+    phone: "+46 (0) 73-631 46 87",
     email: "Joakim@jhsaxelteknik.se",
     image: joakimImg,
   },
   {
     name: "William Wong",
-    phone: "070-842 61 75",
+    phone: "+46 (0) 70-842 61 75",
     email: "William@jhsaxelteknik.se",
     image: williamImg,
   },
