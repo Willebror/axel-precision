@@ -17,7 +17,7 @@ const ContactSection = () => {
           </p>
         </div>
 
-        <div className="grid sm:grid-cols-3 gap-6 max-w-3xl mx-auto">
+        <div className="grid sm:grid-cols-3 gap-6 max-w-4xl mx-auto">
           <a
             href="tel:+46736314687"
             className="group flex flex-col items-center text-center p-6 md:p-8 rounded-xl border border-border bg-card hover:border-primary/40 hover:shadow-lg transition-all duration-300"
