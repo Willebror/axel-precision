@@ -1,17 +1,20 @@
 import { useState } from "react";
 import { Menu, X, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { useLanguage } from "@/i18n/LanguageContext";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 import logo from "@/assets/logo.svg";
-
-const navLinks = [
-  { label: "Start", href: "#start" },
-  { label: "Tjänster", href: "#tjanster" },
-  { label: "Om oss", href: "#om-oss" },
-  { label: "Kontakt", href: "#kontakt" },
-];
 
 const SiteHeader = () => {
   const [open, setOpen] = useState(false);
+  const { t } = useLanguage();
+
+  const navLinks = [
+    { label: t("nav.start"), href: "#start" },
+    { label: t("nav.services"), href: "#tjanster" },
+    { label: t("nav.about"), href: "#om-oss" },
+    { label: t("nav.contact"), href: "#kontakt" },
+  ];
 
   return (
     <header className="fixed top-0 left-0 right-0 z-50 bg-accent/95 backdrop-blur-md border-b border-border/10">
@@ -31,22 +34,26 @@ const SiteHeader = () => {
               {link.label}
             </a>
           ))}
+          <LanguageSwitcher />
           <Button asChild size="sm" className="gradient-cta shadow-cta border-0 text-primary-foreground font-semibold">
             <a href="#kontakt">
               <Phone className="w-4 h-4 mr-2" />
-              Kontakta oss
+              {t("nav.cta")}
             </a>
           </Button>
         </nav>
 
-        {/* Mobile toggle */}
-        <button
-          onClick={() => setOpen(!open)}
-          className="lg:hidden text-accent-foreground p-2"
-          aria-label="Toggle menu"
-        >
-          {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
-        </button>
+        {/* Mobile toggle + flags */}
+        <div className="lg:hidden flex items-center gap-3">
+          <LanguageSwitcher />
+          <button
+            onClick={() => setOpen(!open)}
+            className="text-accent-foreground p-2"
+            aria-label="Toggle menu"
+          >
+            {open ? <X className="w-6 h-6" /> : <Menu className="w-6 h-6" />}
+          </button>
+        </div>
       </div>
 
       {/* Mobile nav */}
@@ -66,7 +73,7 @@ const SiteHeader = () => {
             <Button asChild className="gradient-cta shadow-cta border-0 text-primary-foreground font-semibold w-full mt-2">
               <a href="#kontakt" onClick={() => setOpen(false)}>
                 <Phone className="w-4 h-4 mr-2" />
-                Kontakta oss
+                {t("nav.cta")}
               </a>
             </Button>
           </div>
