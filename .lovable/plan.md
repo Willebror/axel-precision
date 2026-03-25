@@ -1,28 +1,20 @@
 
 
-## Snyggare språkväljare med jordglob
+## Flytta hero-bilden åt vänster på surfplatta/telefon
 
-### Nuläge
-Flaggorna visas som en rad emoji-knappar i headern. Fungerar men tar plats och ser enkelt ut.
+### Problem
+Bilden använder `object-cover` med default `object-position: center`, vilket gör att bilen (som troligen är till vänster i bilden) beskärs bort på smala skärmar.
 
-### Ny design
-Ersätt flagg-raden med en **Globe-ikon** (från lucide-react) som öppnar en dropdown-meny med språkalternativen. Varje alternativ visar flagga + språknamn. Aktivt språk markeras med en check.
+### Lösning
+Lägg till responsiv `object-position` på hero-bilden:
+- **Mobil/surfplatta**: `object-position: left` så att bilens vänstra del (där lastbilen är) prioriteras
+- **Desktop**: Behåll `center` eller justera efter behov
 
-### Implementation
+### Ändring
+**`src/components/HeroSection.tsx`** — rad 20, uppdatera img-klassen:
+```
+object-cover object-left md:object-center
+```
 
-**1. Omdesigna `LanguageSwitcher.tsx`**
-- Använd `DropdownMenu` från shadcn/ui (redan finns i projektet)
-- Trigger: `Globe`-ikon (lucide-react) med subtil hover-effekt
-- Dropdown-items: flagga + språknamn (t.ex. "🇸🇪 Svenska"), check-markering på aktivt val
-- Kompakt och diskret, passar in i headern
-
-**2. Uppdatera `SiteHeader.tsx`**
-- Inga strukturella ändringar behövs, `LanguageSwitcher` byts ut på plats
-- Tar mindre horisontellt utrymme än nuvarande 5 flaggor i rad
-
-### Tekniska detaljer
-- Komponent: `DropdownMenu`, `DropdownMenuTrigger`, `DropdownMenuContent`, `DropdownMenuItem` (redan installerade)
-- Ikon: `Globe` från `lucide-react`
-- Check-markering: `Check` från `lucide-react`
-- Inga nya beroenden
+Detta gör att bilden förskjuts åt vänster på små skärmar så att lastbilen syns, medan den centreras som vanligt på desktop.
 
