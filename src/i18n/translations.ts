@@ -448,7 +448,7 @@ export const translations: Record<Language, Record<string, string>> = {
     "team.label": "Our team",
     "team.title": "Meet our technicians",
     "team.desc": "Experienced specialists with a passion for precision and quality.",
-    "team.role": "Axle technician",
+    "team.role": "Wheel Alignment Technician",
     "cta.title": "Need wheel alignment?",
     "cta.desc": "Contact us today for a fast and professional service directly at your location.",
     "cta.button": "Book now",
