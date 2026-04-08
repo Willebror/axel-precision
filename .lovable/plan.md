@@ -1,43 +1,28 @@
 
 
-## Optimera kritiska begärandskedjor (Google Lighthouse)
+## Optimera bildstorlekar för bättre LCP och sidladdning
 
-Problemet Google pekar på är att typsnittsladdningen skapar en kedja: HTML → CSS → Google Fonts CSS → .woff2-filer (4 steg). Den största vinsten är att bryta den kedjan.
+Google Lighthouse pekar på att bilderna är för stora — speciellt hero-bilden (1.7 MB). Lösningen är att konvertera till WebP-format och skala ner där det behövs.
 
-### Vad som orsakar kedjan
+### Åtgärder
 
-Rad 1 i `src/index.css` laddar Google Fonts via `@import`, vilket innebär att webbläsaren måste:
-1. Ladda HTML
-2. Ladda JS-bundlen (som inkluderar CSS)
-3. Hämta Google Fonts CSS-filen
-4. Hämta de faktiska typsnittsfilerna (.woff2)
+**1. Konvertera alla bilder till WebP**
+- `hero-truck.jpg` (1.7 MB, 1376×768) → WebP, ~80% kvalitet → uppskattningsvis ~150-250 KB
+- `service-alignment.jpg` (353 KB, 1024×1536) → WebP + skala ner till 800px bredd → ~50-80 KB
+- `team-joakim.jpg` (180 KB, 1024×1434) → WebP + skala ner till 700px bredd → ~40-60 KB
+- `team-william.jpg` (184 KB, 1024×1434) → WebP + skala ner till 700px bredd → ~40-60 KB
 
-### Lösning: Preload + flytta till HTML
-
-**1. Flytta Google Fonts från CSS `@import` till `<link>` i `index.html`**
-
-Ta bort `@import`-raden i `src/index.css` och lägg istället till `<link rel="preconnect">` och `<link rel="stylesheet">` direkt i `index.html`. Detta eliminerar ett steg i kedjan eftersom webbläsaren kan börja hämta typsnitten parallellt med JS.
-
-**2. Lägg till `preconnect` för Google Fonts**
-
-Lägg till i `<head>` i `index.html`:
-```html
-<link rel="preconnect" href="https://fonts.googleapis.com" />
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
-```
-
-**3. Ta bort `@import` från `src/index.css`**
-
-Ta bort rad 1: `@import url('https://fonts.googleapis.com/css2?...');`
+**2. Uppdatera imports**
+Ändra filnamn i importerna i `HeroSection.tsx`, `ServicesSection.tsx` och `TeamSection.tsx` från `.jpg` till `.webp`.
 
 ### Effekt
-
-- Kedjan förkortas från 4 steg till 2-3 steg
-- `preconnect` sparar DNS + TLS-tid (~100ms)
-- Typsnitten börjar laddas parallellt med JS istället för att vänta på CSS
+- Total bildstorlek minskar från ~2.5 MB till ~300-450 KB (ca 80% minskning)
+- Hero-bilden (LCP-elementet) minskar drastiskt vilket direkt förbättrar Largest Contentful Paint
+- WebP stöds av alla moderna webbläsare
 
 ### Filer som ändras
-- `index.html` — lägg till preconnect och stylesheet-länk
-- `src/index.css` — ta bort `@import`-raden
+- `src/assets/` — 4 nya .webp-filer ersätter .jpg-filerna
+- `src/components/HeroSection.tsx` — uppdatera import
+- `src/components/ServicesSection.tsx` — uppdatera import
+- `src/components/TeamSection.tsx` — uppdatera import
 
