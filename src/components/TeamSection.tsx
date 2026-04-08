@@ -1,7 +1,7 @@
 import { Phone, Mail } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import joakimImg from "@/assets/team-joakim.jpg";
-import williamImg from "@/assets/team-william.jpg";
+import joakimImg from "@/assets/team-joakim.webp";
+import williamImg from "@/assets/team-william.webp";
 
 const team = [
   {
