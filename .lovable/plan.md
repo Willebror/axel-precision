@@ -1,28 +1,22 @@
 
 
-## Optimera bildstorlekar för bättre LCP och sidladdning
+## Optimera LCP-bilden med fetchpriority och preload
 
-Google Lighthouse pekar på att bilderna är för stora — speciellt hero-bilden (1.7 MB). Lösningen är att konvertera till WebP-format och skala ner där det behövs.
+Google föreslår två saker: att bilden har `fetchpriority="high"` och att den är synlig direkt från HTML (preload). Bra förslag — enkelt att implementera.
 
 ### Åtgärder
 
-**1. Konvertera alla bilder till WebP**
-- `hero-truck.jpg` (1.7 MB, 1376×768) → WebP, ~80% kvalitet → uppskattningsvis ~150-250 KB
-- `service-alignment.jpg` (353 KB, 1024×1536) → WebP + skala ner till 800px bredd → ~50-80 KB
-- `team-joakim.jpg` (180 KB, 1024×1434) → WebP + skala ner till 700px bredd → ~40-60 KB
-- `team-william.jpg` (184 KB, 1024×1434) → WebP + skala ner till 700px bredd → ~40-60 KB
+**1. Lägg till `fetchpriority="high"` på hero-bilden**
+I `src/components/HeroSection.tsx`, lägg till attributet på `<img>`-taggen. Detta talar om för webbläsaren att prioritera denna bild framför andra resurser.
 
-**2. Uppdatera imports**
-Ändra filnamn i importerna i `HeroSection.tsx`, `ServicesSection.tsx` och `TeamSection.tsx` från `.jpg` till `.webp`.
+**2. Lägg till `<link rel="preload">` i `index.html`**
+Eftersom bilden importeras via Vite och får ett hashat filnamn kan vi inte preloada den statiskt i HTML. Dock löser `fetchpriority="high"` + `loading="eager"` (som redan finns) det mesta av problemet.
 
-### Effekt
-- Total bildstorlek minskar från ~2.5 MB till ~300-450 KB (ca 80% minskning)
-- Hero-bilden (LCP-elementet) minskar drastiskt vilket direkt förbättrar Largest Contentful Paint
-- WebP stöds av alla moderna webbläsare
+Alternativt kan vi flytta hero-bilden till `public/`-mappen för att ge den en fast URL och kunna preloada den i HTML.
+
+### Rekommendation
+Enklaste och mest effektiva lösningen: lägg till `fetchpriority="high"` på img-taggen. Det ger den största vinsten med minst ändring.
 
 ### Filer som ändras
-- `src/assets/` — 4 nya .webp-filer ersätter .jpg-filerna
-- `src/components/HeroSection.tsx` — uppdatera import
-- `src/components/ServicesSection.tsx` — uppdatera import
-- `src/components/TeamSection.tsx` — uppdatera import
+- `src/components/HeroSection.tsx` — lägg till `fetchpriority="high"` på img-taggen
 
