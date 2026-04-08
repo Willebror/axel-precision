@@ -1,7 +1,7 @@
 import { MapPin, TrendingDown, ShieldCheck } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { useLanguage } from "@/i18n/LanguageContext";
-import heroImage from "@/assets/hero-truck.jpg";
+import heroImage from "@/assets/hero-truck.webp";
 
 const HeroSection = () => {
   const { t } = useLanguage();

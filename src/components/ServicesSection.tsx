@@ -1,6 +1,6 @@
 import { Gauge, Fuel, Shield, Clock } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
-import serviceImage from "@/assets/service-alignment.jpg";
+import serviceImage from "@/assets/service-alignment.webp";
 
 const ServicesSection = () => {
   const { t } = useLanguage();
