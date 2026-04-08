@@ -19,6 +19,7 @@ const HeroSection = () => {
         alt="Mobil hjulinställning lastbil och tunga fordon – JH'S Axelteknik Sverige"
         className="absolute inset-0 w-full h-full object-cover object-[75%_center] md:object-center"
         loading="eager"
+        fetchPriority="high"
       />
       <div className="absolute inset-0 gradient-hero" />
 
