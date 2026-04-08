@@ -16,7 +16,7 @@ const HeroSection = () => {
     <section id="start" className="relative min-h-[90vh] md:min-h-screen flex items-center">
       <img
         src={heroImage}
-        alt="Lastbil på svensk väg i solnedgång"
+        alt="Mobil hjulinställning lastbil och tunga fordon – JH'S Axelteknik Sverige"
         className="absolute inset-0 w-full h-full object-cover object-[75%_center] md:object-center"
         loading="eager"
       />
