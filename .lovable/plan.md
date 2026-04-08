@@ -1,35 +1,43 @@
 
 
-## SEO-optimering utan att ändra synligt innehåll
+## Optimera kritiska begärandskedjor (Google Lighthouse)
 
-Sidan har redan grundläggande SEO (title, meta description, JSON-LD, canonical). Här är vad vi kan förbättra utan att påverka det visuella innehållet:
+Problemet Google pekar på är att typsnittsladdningen skapar en kedja: HTML → CSS → Google Fonts CSS → .woff2-filer (4 steg). Den största vinsten är att bryta den kedjan.
 
-### 1. Skapa sitemap.xml
-En `public/sitemap.xml` som listar alla sidor (`/` och `/integritetspolicy`) med `lastmod`-datum. Detta hjälper Google indexera sidan snabbare.
+### Vad som orsakar kedjan
 
-### 2. Uppdatera robots.txt med sitemap-referens
-Lägg till `Sitemap: https://jhsaxelteknik.se/sitemap.xml` i robots.txt.
+Rad 1 i `src/index.css` laddar Google Fonts via `@import`, vilket innebär att webbläsaren måste:
+1. Ladda HTML
+2. Ladda JS-bundlen (som inkluderar CSS)
+3. Hämta Google Fonts CSS-filen
+4. Hämta de faktiska typsnittsfilerna (.woff2)
 
-### 3. Bredda meta-keywords
-Lägg till fler sökord: `hjulinställning buss`, `hjulinställning släp`, `hjulinställning trailer`, `axelinställning tunga fordon`, `mobil hjulbalansering lastbil`, `hjulinställning Sverige`.
+### Lösning: Preload + flytta till HTML
 
-### 4. Utöka JSON-LD (strukturerad data)
-Lägg till mer information i befintligt LocalBusiness-schema:
-- `telephone`, `email`, `address` (om tillgängligt)
-- Lägg till ett separat `Service`-schema som listar fordonstyperna (lastbil, buss, släp, trailer)
-- `sameAs`-länkar till Instagram och Facebook
+**1. Flytta Google Fonts från CSS `@import` till `<link>` i `index.html`**
 
-### 5. Lägg till hreflang-taggar
-Eftersom sidan stöder flera språk, lägg till `<link rel="alternate" hreflang="sv" href="..." />` etc. i `<head>`. Detta signalerar till Google vilka språkversioner som finns.
+Ta bort `@import`-raden i `src/index.css` och lägg istället till `<link rel="preconnect">` och `<link rel="stylesheet">` direkt i `index.html`. Detta eliminerar ett steg i kedjan eftersom webbläsaren kan börja hämta typsnitten parallellt med JS.
 
-### 6. Förbättra alt-texter på bilder
-Uppdatera alt-attributen till mer nyckelordstäta beskrivningar, t.ex. `"Mobil hjulinställning lastbil – JH'S Axelteknik"` — detta syns inte för besökare men hjälper bildsök.
+**2. Lägg till `preconnect` för Google Fonts**
 
-### 7. Lägg till Open Graph-bild
-Lägg till `og:image` och `og:url` meta-taggar för bättre delningar på sociala medier (indirekt SEO-signal).
+Lägg till i `<head>` i `index.html`:
+```html
+<link rel="preconnect" href="https://fonts.googleapis.com" />
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" />
+```
 
-### Tekniska detaljer
-- **Filer som ändras**: `index.html`, `public/robots.txt`, `src/components/HeroSection.tsx` (alt-text), `src/components/ServicesSection.tsx` (alt-text)
-- **Nya filer**: `public/sitemap.xml`
-- **Inget synligt innehåll ändras** — alla ändringar sker i meta-taggar, strukturerad data, alt-texter och konfigurationsfiler
+**3. Ta bort `@import` från `src/index.css`**
+
+Ta bort rad 1: `@import url('https://fonts.googleapis.com/css2?...');`
+
+### Effekt
+
+- Kedjan förkortas från 4 steg till 2-3 steg
+- `preconnect` sparar DNS + TLS-tid (~100ms)
+- Typsnitten börjar laddas parallellt med JS istället för att vänta på CSS
+
+### Filer som ändras
+- `index.html` — lägg till preconnect och stylesheet-länk
+- `src/index.css` — ta bort `@import`-raden
 
