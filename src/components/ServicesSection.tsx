@@ -29,7 +29,7 @@ const ServicesSection = () => {
           <div className="rounded-xl overflow-hidden shadow-card">
             <img
               src={serviceImage}
-              alt="Tekniker utför hjulinställning på lastbil"
+              alt="Mobil hjulinställning på lastbil, buss och släp – JH'S Axelteknik"
               className="w-full h-full object-cover aspect-[4/3]"
               loading="lazy"
             />
