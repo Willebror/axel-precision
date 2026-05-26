@@ -2,6 +2,7 @@ import SiteHeader from "@/components/SiteHeader";
 import HeroSection from "@/components/HeroSection";
 import ServicesSection from "@/components/ServicesSection";
 import AboutSection from "@/components/AboutSection";
+import ServiceAreasSection from "@/components/ServiceAreasSection";
 import TeamSection from "@/components/TeamSection";
 import CtaBanner from "@/components/CtaBanner";
 import ContactSection from "@/components/ContactSection";
@@ -14,6 +15,7 @@ const Index = () => {
       <HeroSection />
       <ServicesSection />
       <AboutSection />
+      <ServiceAreasSection />
       <TeamSection />
       <CtaBanner />
       <ContactSection />
