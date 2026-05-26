@@ -12,7 +12,7 @@ const ServiceAreasSection = () => {
   const { t } = useLanguage();
 
   return (
-    <section id="omraden" className="py-20 md:py-28 bg-background">
+    <section id="omraden" className="sr-only">
       <div className="container">
         <div className="max-w-3xl mx-auto text-center mb-12">
           <p className="text-primary font-heading font-semibold text-sm tracking-widest uppercase mb-3">
