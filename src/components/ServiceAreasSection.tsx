@@ -5,7 +5,7 @@ const regions: { key: string; cities: string[] }[] = [
   { key: "areas.r1", cities: ["Stockholm", "Södertälje", "Västerås", "Örebro", "Eskilstuna"] },
   { key: "areas.r2", cities: ["Norrköping", "Linköping", "Jönköping", "Gävle"] },
   { key: "areas.r3", cities: ["Göteborg", "Halmstad", "Helsingborg"] },
-  { key: "areas.r4", cities: ["Malmö", "Helsingborg"] },
+  { key: "areas.r4", cities: ["Malmö"] },
 ];
 
 const ServiceAreasSection = () => {
