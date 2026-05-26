@@ -79,6 +79,17 @@ export const translations: Record<Language, Record<string, string>> = {
     // Footer
     "footer.privacy": "Integritetspolicy",
 
+    // Service areas
+    "areas.label": "Områden vi täcker",
+    "areas.title": "Mobil hjulinställning i hela Sverige",
+    "areas.desc": "Vi utför mobil hjulinställning för lastbilar, bussar, släp och trailers på plats hos er – med fokus på Stockholm/Mälardalen, E4-stråket samt Väst- och Sydsverige.",
+    "areas.cityPrefix": "Hjulinställning i",
+    "areas.r1": "Stockholm & Mälardalen",
+    "areas.r2": "Östkusten / E4",
+    "areas.r3": "Västkusten",
+    "areas.r4": "Skåne & logistik",
+    "areas.footnote": "Är ni baserade på annan ort? Hör av er – vi planerar rutter i hela Sverige.",
+
     // Cookie
     "cookie.text": "Vi använder endast nödvändiga cookies för att webbplatsen ska fungera. Läs mer i vår",
     "cookie.policy": "integritetspolicy",
@@ -176,6 +187,15 @@ export const translations: Record<Language, Record<string, string>> = {
     "contact.email": "E-mail",
     "contact.response": "Vi svarer normalt inden for 24 timer.",
     "footer.privacy": "Privatlivspolitik",
+    "areas.label": "Områder vi dækker",
+    "areas.title": "Mobil hjulindstilling i hele Sverige",
+    "areas.desc": "Vi udfører mobil hjulindstilling for lastbiler, busser, anhængere og trailere på stedet – med fokus på Stockholm/Mälardalen, E4-korridoren samt Vest- og Sydsverige.",
+    "areas.cityPrefix": "Hjulindstilling i",
+    "areas.r1": "Stockholm & Mälardalen",
+    "areas.r2": "Østkysten / E4",
+    "areas.r3": "Vestkysten",
+    "areas.r4": "Skåne & logistik",
+    "areas.footnote": "Er I baseret et andet sted? Kontakt os – vi planlægger ruter i hele Sverige.",
     "cookie.text": "Vi bruger kun nødvendige cookies for at hjemmesiden fungerer. Læs mere i vores",
     "cookie.policy": "privatlivspolitik",
     "cookie.accept": "Jeg forstår",
