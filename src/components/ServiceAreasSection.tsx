@@ -1,6 +1,34 @@
 import { MapPin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
+const cityBlurbs: Record<string, string> = {
+  Stockholm: "Spara pengar med mobil hjulinställning i Stockholm – vi kommer direkt till ert åkeri i city, Kungens kurva eller Årsta.",
+  Södertälje: "Mobil hjulinställning i Södertälje för Scania-åkerier och tunga transporter runt Morabergs logistikområde.",
+  Västerås: "Hjulinställning på plats i Västerås – minskat däckslitage för lastbilar i Hacksta och Hälla industriområde.",
+  Örebro: "Axelinställning i Örebro vid logistiknavet Pilängen – mindre stillestånd, mer rullande timmar.",
+  Eskilstuna: "Mobil hjulinställning i Eskilstuna för transportföretag i Folkesta och Svista – sparar bränsle på långa rutter.",
+  Norrköping: "Hjulinställning i Norrköping nära Händelö hamn – optimerat för containertrafik och tunga ekipage.",
+  Linköping: "Axelteknik på plats i Linköping – vi servar åkerier runt Tornby och Mörtlösa industriområde.",
+  Jönköping: "Mobil hjulinställning i Jönköping mitt i logistikhjärtat vid Torsvik – sänk däckkostnaderna direkt.",
+  Gävle: "Hjulinställning i Gävle nära Tolvfors och hamnen – perfekt för lastbilar som kör Norrlandsrutten.",
+  Göteborg: "Mobil hjulinställning i Göteborg vid Hisingen och Arendal – minimera stillestånd för hamntransporter.",
+  Halmstad: "Hjulinställning i Halmstad längs E6 – snabb service för åkerier med skandinaviska rutter.",
+  Helsingborg: "Axelinställning i Helsingborg nära färjeläget – håll trailers raka inför överfarten till Danmark.",
+  Malmö: "Mobil hjulinställning i Malmö vid Norra hamnen och Fosie – optimerat för Öresundstrafik och Europatransporter.",
+  Borås: "Hjulinställning i Borås för textil- och e-handelslogistik runt Viared – mindre slitage på långa leveranser.",
+  Trollhättan: "Mobil hjulinställning i Trollhättan – vi servar industri- och åkeriverksamheter längs Götaälvdalen.",
+  Uddevalla: "Axelinställning i Uddevalla nära hamnen – håll fordonsflottan i toppform för västkustens transporter.",
+  Varberg: "Hjulinställning i Varberg längs E6 – ideal stopppunkt för åkerier mellan Göteborg och Malmö.",
+  Enköping: "Mobil hjulinställning i Enköping vid E18 – snabb service för transportörer i Mälardalen.",
+  Uppsala: "Hjulinställning i Uppsala för åkerier runt Librobäck och Fyrislund – förlängd däcklivslängd garanterad.",
+  Nyköping: "Axelinställning i Nyköping nära Skavsta – effektiv service för flyg- och godstransporter.",
+  Katrineholm: "Mobil hjulinställning i Katrineholm – centralt i logistikkorset mellan Stockholm, Göteborg och Malmö.",
+  Värnamo: "Hjulinställning i Värnamo längs E4 – stor knutpunkt för möbel- och transportindustrin i Småland.",
+  Växjö: "Mobil hjulinställning i Växjö – vi servar åkerier i Nylanda och Helgevärma industriområden.",
+  Ljungby: "Axelinställning i Ljungby vid E4-korset – sparar bränsle för transporter mellan Stockholm och Malmö.",
+  Kalmar: "Hjulinställning i Kalmar nära Ölandsbron – optimerad service för östkustens tunga fordonsflottor.",
+};
+
 const regions: { key?: string; title?: string; cities: string[] }[] = [
   { key: "areas.r1", cities: ["Stockholm", "Södertälje", "Västerås", "Örebro", "Eskilstuna"] },
   { key: "areas.r2", cities: ["Norrköping", "Linköping", "Jönköping", "Gävle"] },
@@ -48,6 +76,9 @@ const ServiceAreasSection = () => {
                 {r.cities.map((city) => (
                   <li key={city} className="text-sm text-muted-foreground">
                     {t("areas.cityPrefix")} {city}
+                    {cityBlurbs[city] && (
+                      <span className="block text-xs">{cityBlurbs[city]}</span>
+                    )}
                   </li>
                 ))}
               </ul>
