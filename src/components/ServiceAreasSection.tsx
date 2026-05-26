@@ -1,11 +1,15 @@
 import { MapPin } from "lucide-react";
 import { useLanguage } from "@/i18n/LanguageContext";
 
-const regions: { key: string; cities: string[] }[] = [
+const regions: { key?: string; title?: string; cities: string[] }[] = [
   { key: "areas.r1", cities: ["Stockholm", "Södertälje", "Västerås", "Örebro", "Eskilstuna"] },
   { key: "areas.r2", cities: ["Norrköping", "Linköping", "Jönköping", "Gävle"] },
   { key: "areas.r3", cities: ["Göteborg", "Halmstad", "Helsingborg"] },
   { key: "areas.r4", cities: ["Malmö"] },
+  { title: "Västkusten", cities: ["Borås", "Trollhättan", "Uddevalla", "Varberg"] },
+  { title: "Mälardalen", cities: ["Enköping", "Uppsala", "Nyköping", "Katrineholm"] },
+  { title: "Småland/transport", cities: ["Värnamo", "Växjö", "Ljungby"] },
+  { title: "Öst", cities: ["Kalmar"] },
 ];
 
 const ServiceAreasSection = () => {
@@ -29,7 +33,7 @@ const ServiceAreasSection = () => {
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 max-w-6xl mx-auto">
           {regions.map((r) => (
             <div
-              key={r.key}
+              key={r.key ?? r.title}
               className="bg-secondary rounded-xl p-6 border border-border hover:border-primary/50 transition-colors"
             >
               <div className="flex items-center gap-3 mb-4">
@@ -37,7 +41,7 @@ const ServiceAreasSection = () => {
                   <MapPin className="w-5 h-5 text-primary" />
                 </div>
                 <h3 className="font-heading text-lg font-semibold text-foreground">
-                  {t(r.key)}
+                  {r.key ? t(r.key) : r.title}
                 </h3>
               </div>
               <ul className="space-y-1.5">
