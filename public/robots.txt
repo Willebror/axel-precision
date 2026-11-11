@@ -13,4 +13,4 @@ Allow: /
 User-agent: *
 Allow: /
 
-Sitemap: https://jhsaxelteknik.se/sitemap.xml
+Sitemap: https://jhsaxelteknik.com/sitemap.xml
