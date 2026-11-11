@@ -2,7 +2,7 @@
 
 # Ledstjärna
 
-Åkerier får sina lastbilar och bussar hjulinställda där de står
+JH’S Mobila Axelteknik erbjuder professionell mobil hjul- och axelinställning för lastbilar, bussar och släp. Vi utför arbeten över hela Sverige.
 
 ## Mätetal
 
