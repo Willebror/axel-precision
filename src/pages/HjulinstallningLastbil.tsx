@@ -40,7 +40,7 @@ const HjulinstallningLastbil = () => {
               <li>minskar däckslitaget och förlänger däckens livslängd</li>
               <li>sänker bränsleförbrukningen</li>
               <li>förbättrar stabilitet och trafiksäkerhet</li>
-              <li>förlänger fordonets livslängd</li>
+              <li>förbättrar chaufförens arbetsmiljö</li>
             </ul>
           </section>
           <section>
