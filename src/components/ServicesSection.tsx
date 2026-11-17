@@ -1,4 +1,5 @@
 import { Gauge, Fuel, Shield, Clock } from "lucide-react";
+import { Link } from "react-router-dom";
 import { useLanguage } from "@/i18n/LanguageContext";
 import serviceImage from "@/assets/service-alignment.webp";
 
@@ -23,6 +24,9 @@ const ServicesSection = () => {
           <p className="text-muted-foreground text-lg max-w-2xl mx-auto leading-relaxed">
             {t("services.desc")}
           </p>
+          <Link to="/hjulinstallning-lastbil" className="inline-block mt-4 text-primary font-semibold hover:underline">
+            Läs mer om hjulinställning lastbil →
+          </Link>
         </div>
 
         <div className="grid md:grid-cols-2 gap-12 lg:gap-16 items-center">
