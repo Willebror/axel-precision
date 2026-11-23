@@ -69,6 +69,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "cta.desc": "Kontakta oss idag för en snabb och professionell service direkt hos er.",
     "cta.button": "Boka tid nu",
 
+    // Press
+    "press.label": "Pressklipp",
+    "press.title": "Uppmärksammade i branschen",
+    "press.desc": "Det är alltid roligt när vårt arbete och vår verksamhet uppmärksammas av branschen. Här kan du läsa mer om vad andra har skrivit om oss.",
+    "press.itemDesc": "Läs artikeln om JH'S Mobila Axelteknik.",
+    "press.read": "Läs artikeln",
+
     // Contact
     "contact.label": "Kontakt",
     "contact.title": "Kontakta oss",
@@ -181,6 +188,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "cta.title": "Har du brug for hjulindstilling?",
     "cta.desc": "Kontakt os i dag for en hurtig og professionel service direkte hos jer.",
     "cta.button": "Book tid nu",
+
+    // Press
+    "press.label": "Presseklip",
+    "press.title": "Omtalt i branchen",
+    "press.desc": "Det er altid sjovt, når vores arbejde og vores virksomhed bliver bemærket i branchen. Her kan du læse mere om, hvad andre har skrevet om os.",
+    "press.itemDesc": "Læs artiklen om JH'S Mobila Axelteknik.",
+    "press.read": "Læs artiklen",
     "contact.label": "Kontakt",
     "contact.title": "Kontakt os",
     "contact.desc": "Har du brug for hjulindstilling? Ring, mail eller send en SMS – vi vender hurtigt tilbage.",
@@ -284,6 +298,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "cta.title": "Tarvitsetko pyöränsuuntausta?",
     "cta.desc": "Ota yhteyttä tänään nopeaan ja ammattimaiseen palveluun suoraan luonanne.",
     "cta.button": "Varaa aika nyt",
+
+    // Press
+    "press.label": "Lehtileikkeitä",
+    "press.title": "Huomiota alalla",
+    "press.desc": "On aina hauskaa, kun työmmme ja toimintamme saa huomiota alalla. Tässä voit lukea lisää siitä, mitä muut ovat kirjoittaneet meistä.",
+    "press.itemDesc": "Lue artikkeli JH'S Mobila Axelteknikista.",
+    "press.read": "Lue artikkeli",
     "contact.label": "Yhteystiedot",
     "contact.title": "Ota yhteyttä",
     "contact.desc": "Tarvitsetko pyöränsuuntausta? Soita, lähetä sähköpostia tai tekstiviesti – vastaamme nopeasti.",
@@ -387,6 +408,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "cta.title": "Trenger du hjulinnstilling?",
     "cta.desc": "Kontakt oss i dag for en rask og profesjonell service direkte hos dere.",
     "cta.button": "Book tid nå",
+
+    // Press
+    "press.label": "Presseklipp",
+    "press.title": "Omtalt i bransjen",
+    "press.desc": "Det er alltid moro når arbeidet vårt og virksomheten vår blir lagt merke til i bransjen. Her kan du lese mer om hva andre har skrevet om oss.",
+    "press.itemDesc": "Les artikkelen om JH'S Mobila Axelteknik.",
+    "press.read": "Les artikkelen",
     "contact.label": "Kontakt",
     "contact.title": "Kontakt oss",
     "contact.desc": "Trenger du hjulinnstilling? Ring, send e-post eller en SMS – vi svarer raskt.",
@@ -490,6 +518,13 @@ export const translations: Record<Language, Record<string, string>> = {
     "cta.title": "Need wheel alignment?",
     "cta.desc": "Contact us today for a fast and professional service directly at your location.",
     "cta.button": "Book now",
+
+    // Press
+    "press.label": "In the press",
+    "press.title": "Featured in the industry",
+    "press.desc": "It's always great when our work and our business get noticed in the industry. Here you can read more about what others have written about us.",
+    "press.itemDesc": "Read the article about JH'S Mobila Axelteknik.",
+    "press.read": "Read the article",
     "contact.label": "Contact",
     "contact.title": "Contact us",
     "contact.desc": "Need wheel alignment? Call, email or send an SMS – we'll get back to you quickly.",
